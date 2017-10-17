@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Adrian Ortega Cereceto -->
+<title>Registro</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Stylesheets -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+
+<script type="text/javascript">
+function guardar() {
+	var login = document.formula.usuario.value;
+	
+	localStorage.setItem("usuario", login);
+}
+</script>
+
+<style type="text/css">
+.container {
+	margin-top: 30px;
+}
+.subscriber {
+	margin-top: 30px;
+}
+
+body {
+color:White;
+}
+</style>
+</head>
+
+
+<body background="danganronpa.jpg">
+
+
+	<div class="container">
+		<!-- <div class="container-fluid"> -->
+		<div class="row justify-content-center">
+			<div class="col-xs-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+				<h1>Login</h1>
+				<hr>
+				<form role="form" name="formula" method="POST" action="Principal.html">
+					<div class="form-group">
+						<label for="usuario">Usuario</label> <input type="text"
+							class="form-control" id="usuario" 
+							placeholder="Usuario" autofocus="" required=""> 
+							
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label> <input type="password"
+							class="form-control" id="password" placeholder="Password" required="">
+					</div>
+					<div class="form-check">
+						<label class="form-check-label"> <input type="checkbox"
+							class="form-check-input"> Recordar
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary" onclick="guardar()" >
+						<i class="fa fa-sign-in"></i> Iniciar sesion
+					</button>
+				</form>
+			</div>
+			</div>
+		</div>
+		
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/mijs.js"></script>
+</body>
+</html>
