@@ -30,10 +30,10 @@ public class Principal {
 			// MENU GRAFICO
 
 			System.out.println("+-------------------------------------+");
-			System.out.println("|             JDBC - SMB              |");
+			System.out.println("|                    JDBC             |");
 			System.out.println("+-------------------------------------+");
 			System.out.println("|                                     |");
-			System.out.println("| 1. AÑADIR ARTISTA, CANCION Y ESTILO |");
+			System.out.println("| 1. AÃ‘ADIR ARTISTA, CANCION Y ESTILO |");
 			System.out.println("|                                     |");
 			System.out.println("| 2. LISTAR ARTISTAS POR ESTILO       |");
 			System.out.println("|                                     |");
@@ -41,7 +41,7 @@ public class Principal {
 			System.out.println("|                                     |");
 			System.out.println("| 4. ACTUALIZAR EDAD ARTISTA          |");
 			System.out.println("|                                     |");
-			System.out.println("| 5. AÑADIR UN MIN DURACION POR PAIS  |");
+			System.out.println("| 5. AÃ‘ADIR UN MIN DURACION POR PAIS  |");
 			System.out.println("|                                     |");
 			System.out.println("| 6. BORRAR LAS CANCIONES POR ARTISTA |");
 			System.out.println("|                                     |");
@@ -57,7 +57,7 @@ public class Principal {
 
 			switch (opcionMenu) {
 
-			case 1: // AÑADIR ARTISTA, CANCION Y ESTILO
+			case 1: // AÃ‘ADIR ARTISTA, CANCION Y ESTILO
 
 				String nombreArtista, artistaApellido, artistaPais;
 				int artistaEstilo, artistaEdad, opcionSubMenu;
@@ -65,14 +65,14 @@ public class Principal {
 				do {
 
 					System.out.println("+-------------------------------------+");
-					System.out.println("|             JDBC - SMB              |");
+					System.out.println("|                   JDBC              |");
 					System.out.println("+-------------------------------------+");
 					System.out.println("|                                     |");
-					System.out.println("|        1. AÑADIR ARTISTA            |");
+					System.out.println("|        1. AÃ‘ADIR ARTISTA            |");
 					System.out.println("|                                     |");
-					System.out.println("|        2. AÑADIR CANCION            |");
+					System.out.println("|        2. AÃ‘ADIR CANCION            |");
 					System.out.println("|                                     |");
-					System.out.println("|        3. AÑADIR ESTILO             |");
+					System.out.println("|        3. AÃ‘ADIR ESTILO             |");
 					System.out.println("|                                     |");
 					System.out.println("+-------------------------------------+");
 					System.out.println("|    0. VOLVER AL MENU PRINCIPAL      |");
@@ -86,7 +86,7 @@ public class Principal {
 
 					case 1:
 						System.out.println("+----------------------------------+");
-						System.out.println("|        AÑADIR UN ARTISTA         |");
+						System.out.println("|        AÃ‘ADIR UN ARTISTA         |");
 						System.out.println("+----------------------------------+");
 						System.out.println();
 
@@ -122,7 +122,7 @@ public class Principal {
 					case 2:
 
 						System.out.println("+----------------------------------+");
-						System.out.println("|        AÑADIR UNA CANCION        |");
+						System.out.println("|        AÃ‘ADIR UNA CANCION        |");
 						System.out.println("+----------------------------------+");
 						System.out.println();
 
@@ -132,7 +132,7 @@ public class Principal {
 						System.out.print("DURACION CANCION [segundos]: ");
 						int duracion = sc.nextInt();
 						
-						System.out.println("¿ A QUE ARTISTA PERTENECE ?");
+						System.out.println("Â¿ A QUE ARTISTA PERTENECE ?");
 						
 						List<Artista> artistas = aDAO.listarArtistas();	
 						for (int i = 0; i < artistas.size(); i++) {
@@ -143,7 +143,7 @@ public class Principal {
 						System.out.print("ESCRIBA EL ID DEL ARTISTA AL QUE PERTENECE " + nombreCancion +" [ID]: ");
 						int artistaCancion = sc.nextInt();
 						
-						System.out.print("ESCRIBA EL AÑO AL QUE PERTENECE " + nombreCancion +": ");
+						System.out.print("ESCRIBA EL AÃ‘O AL QUE PERTENECE " + nombreCancion +": ");
 						int anyoPublicacion = sc.nextInt();
 						
 						List<Estilo> estilos = eDAO.ListarTodosEstilos();
@@ -158,9 +158,9 @@ public class Principal {
 						
 						
 						if (cDAO.anadirCacion(new Canciones( nombreCancion, anyoPublicacion ,duracion, artistaCancion, estiloCancion))) {
-							System.out.println("Canción insertada");
+							System.out.println("CanciÃ³n insertada");
 						} else {
-							System.out.println("ERROR: no se ha podido insertar la canción");
+							System.out.println("ERROR: no se ha podido insertar la canciÃ³n");
 						}
 
 						break;
@@ -168,7 +168,7 @@ public class Principal {
 					case 3:
 							
 						System.out.println("+----------------------------------+");
-						System.out.println("|         AÑADIR UN ESTILO         |");
+						System.out.println("|         AÃ‘ADIR UN ESTILO         |");
 						System.out.println("+----------------------------------+");
 						System.out.println();
 
@@ -210,7 +210,7 @@ public class Principal {
 					System.out.println(estilo.get(i));
 				}
 
-				System.out.println("¿ARTISTAS A MOSTRAR POR ESTILO? [ID]: ");
+				System.out.println("Â¿ARTISTAS A MOSTRAR POR ESTILO? [ID]: ");
 				int artistasEstiloID = sc.nextInt();
 
 				List<Artista> artistas = aDAO.listarPorEstilo(artistasEstiloID);
@@ -229,7 +229,7 @@ public class Principal {
 					System.out.println(artists2);
 				}
 
-				System.out.print("¿DE QUE ARTISTA DESEA VER TODAS SUS CANCIONES? [ID]: ");
+				System.out.print("Â¿DE QUE ARTISTA DESEA VER TODAS SUS CANCIONES? [ID]: ");
 				int artistasID = sc.nextInt();
 
 				List<Canciones> canciones = cDAO.listarArtistas(artistasID);
@@ -250,7 +250,7 @@ public class Principal {
 					System.out.println(artistas2);
 				}
 
-				System.out.print("¿INSERTE UN ARTISTA PARA MODIFICAR SU EDAD? [ID]: ");
+				System.out.print("Â¿INSERTE UN ARTISTA PARA MODIFICAR SU EDAD? [ID]: ");
 				int idArtistaCambiaEdad = sc.nextInt();
 
 				Artista artistaCambiaEdad= aDAO.recibeInformacion(idArtistaCambiaEdad);
@@ -283,7 +283,7 @@ public class Principal {
 					System.out.println(artistas2);
 				}
 
-				System.out.print("¿A QUE PAIS QUIERES AÑADIR 1 MINUTO MAS A TODAS SUS CANCIONES?: ");
+				System.out.print("Â¿A QUE PAIS QUIERES AÃ‘ADIR 1 MINUTO MAS A TODAS SUS CANCIONES?: ");
 				String paisAnadirMin = sc.next().toUpperCase();
 
 	
@@ -307,7 +307,7 @@ public class Principal {
 					System.out.println(artistas2);
 				}
 
-				System.out.print("¿A QUE ARTISTA DESEA BORRAR TODAS SUS CANCIONES? [ID]: ");
+				System.out.print("Â¿A QUE ARTISTA DESEA BORRAR TODAS SUS CANCIONES? [ID]: ");
 				int idArtistaAEliminarCanciones = sc.nextInt();
 
 				if (cDAO.eliminarCancionesArtistas(idArtistaAEliminarCanciones)) {
